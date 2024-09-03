@@ -1,0 +1,19 @@
+A:B,C,D,E B:A,C,G C:A,B,D D:H,E,A,C E:A,D,F F:G,E,H,I G:F,B H:F,D I:F 
+import sys
+
+
+lista = list()
+dicc={}
+
+if len(sys.argv) > 1:
+    for arg in sys.argv:
+        if arg == "%":
+            arg.split(":",1)
+            for char in arg[1]:
+                if not char == ',':
+                    lista.append(char)
+        dicc[char] = lista
+        lista = list()
+    print(dicc)
+else:
+    print("no hay argumentos pa")
